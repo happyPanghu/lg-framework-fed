@@ -1,0 +1,624 @@
+/**
+ * 滚动条
+ * @require "dep/mCustomScrollbar/css/mCustomScrollbar.css"
+ */
+
+#lg_tbar {
+  min-width: 1024px;
+  height: 40px;
+  background: #32373e;
+  .inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  div.lg_tbar_l {
+    .logo {
+      width: 43px;
+      height: 21px;
+      float: left;
+      margin-top: 9px;
+      background-image: url("../img/sprite.png");
+      background-repeat: no-repeat;
+      background-position: -20/2px -20/2px;
+      background-size: 128/2px 256/2px;
+      display: block;
+      padding-left: 0;
+    }
+    .suggestCity {
+      float: left;
+      span {
+        font-size: 14px;
+        color: #0dca9f;
+        line-height: 40px;
+        padding-left: 20px;
+        margin: 0;
+      }
+      span:hover {
+        color: #0dca9f;
+      }
+      em {
+        font-size: 12px;
+        color: #afb5c0;
+        line-height: 40px;
+        cursor: pointer;
+      }
+      em:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  ul.lg_tbar_m {
+    float: left;
+    overflow: hidden;
+    margin-left: 34px;
+    .tips-new{
+      display: inline-block;
+      position: absolute;
+      width: 29px;
+      top: 3px;
+      right: -6px;
+      font-size: 12px;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 16px;
+      padding-bottom: 2px;
+      background: #FF7452;
+      border-radius: 9px;
+      z-index: 1;
+    }
+    li {
+      // width: 70px;
+      line-height: 40px;
+      float: left;
+      text-align: center;
+      a {
+        position: relative;
+        font-size: 14px;
+        color: #afb5c0;
+        padding: 0 21px;
+        height: 100%;
+        display: block;
+        text-align: center;
+      }
+      a.current {
+        color: #fff;
+        background: #24282C;
+      }
+      a:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  div.lg_tbar_l,
+  div.lg_tbar_r{
+    a,
+    span {
+      color: #c4c3c3;
+      float: left;
+      line-height: 40px;
+      padding: 0 12px;
+      &:hover {
+        color: #fff;
+      }
+    }
+    span.unick {
+      max-width: 80px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+    }
+    a.lg_app {
+      color: #08d7a2;
+
+      padding: 0 12px 0 27px;
+      margin-top: 13px;
+      line-height: 15px;
+      &:before {
+        content: "";
+        display: block;
+        float: left;
+        width: 12px;
+        height: 17px;
+        margin-right: 4px;
+        margin-top: -1px;
+        background-image: url("../img/sprite.png");
+        background-position: -64px -212px;
+        background-repeat: no-repeat;
+      }
+    }
+    a.lg_app:hover {
+      color: #05eaaf;
+      &:before {
+        background-position: -96px -212px;
+      }
+    }
+    a.lg_os {
+      line-height: 40px;
+      color: #afb5c0;
+      margin: 0;
+      padding-right: 0;
+    }
+    a.lg_os:hover {
+      color: #fff;
+    }
+  }
+  div.lg_tbar_l {
+    float: left;
+  }
+  div.lg_tbar_r{
+    float: right;
+    .account-bar {
+      float: left;
+      span {
+        padding:  0 5px;
+      }
+    }
+    li {
+      position: relative;
+      float: left;
+      height: 40px;
+      em.noticeDot {
+        position: absolute;
+        top: 5px;
+        right: 21px;
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #f22e01;
+        -webkit-transition: opacity 0.3s ease 0s;
+        -moz-transition: opacity 0.3s ease 0s;
+        -ms-transition: opacity 0.3s ease 0s;
+        -o-transition: opacity 0.3s ease 0s;
+        transition: opacity 0.3s ease 0s;
+      }
+      em.dn {
+        display: none;
+      }
+      em#noticeDot_name {
+        right: 21px;
+        left: auto;
+      }
+      em#noticeDot_delivery {
+        right: 6px;
+        left: auto;
+      }
+      em#noticeDot_invitation {
+        left: 70px;
+        right: auto;
+      }
+    }
+    a.bl,
+    span.bl {
+      border-left: 1px solid #5d5d5d;
+    }
+    li.user_dropdown {
+      padding-right: 15px;
+      i {
+        position: absolute;
+        top: 17px;
+        right: 10px;
+        font-size: 0;
+        height: 0;
+        width: 0;
+        border-width: 5px 4px 0;
+        border-style: solid dashed;
+        border-color: #fff transparent transparent;
+        overflow: hidden;
+        -webkit-transition: all 0.4s ease 0s;
+        -moz-transition: all 0.4s ease 0s;
+        -ms-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+      }
+      &:hover {
+        cursor: pointer;
+        span {
+          color: #fff;
+        }
+        i {
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+          animation-fill-mode: forwards;
+        }
+        ul {
+          display: block;
+        }
+        em#noticeDot_name {
+          *display: none;
+          opacity: 0;
+          filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        }
+      }
+    }
+
+    .top-un-login-bar {
+      position: relative;
+      float: left;
+      margin-right: 13px;
+      cursor: pointer;
+      .quick-entrance{
+        margin-right: 8px;
+        color: #afb5c0;
+        padding-top: 1px;
+      }
+      .quick-entrance:last-of-type{
+        margin-right: 28px;
+      }
+    }
+  }
+  div.lg_tbar_r .passport:hover {
+    &:before {
+      background-position: -76px -174px;
+    }
+  }
+  div.lg_tbar_r .passport {
+    font-size: 14px;
+    color: #afb5c0;
+    margin-right: 13px;
+    line-height: 40px;
+    float: left;
+    cursor: pointer;
+    &:before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+      background-image: url("../img/sprite.png");
+      background-position: -76px -136px;
+      background-repeat: no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    a {
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      color: #afb5c0;
+      padding: 0;
+      float: none;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      cursor: pointer;
+    }
+    a:hover {
+      color: #fff;
+    }
+    span {
+      padding: 0 7px;
+      display: inline-block;
+      float: none;
+      color: #5e6166;
+    }
+    span:hover {
+      color: #5e6166;
+    }
+  }
+  .user_dropdown {
+    ul {
+      display: none;
+      overflow: hidden;
+      width: 100%;
+      min-width: 80px;
+      padding-bottom: 8px;
+      background-color: #333;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      z-index: 1000;
+      li {
+        height: 30px;
+        float: none;
+        a {
+          width: 100%;
+          min-width: 56px;
+          display: block;
+          color: #c4c3c3;
+          line-height: 30px;
+          padding: 0 12px;
+          margin: 0;
+          &:hover {
+            color: #fff;
+            background-color: #474747;
+          }
+        }
+      }
+    }
+  }
+  #noticeTip {
+    color: #00b38a;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    float: right;
+    margin: 40px 0 0;
+    padding: 8px 28px 0 12px;
+    border: 2px solid #dcdcdc;
+    z-index: 10;
+  }
+  #noticeTip span {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  #noticeTip span.bot {
+    border-width: 8px;
+    border-style: dashed dashed solid;
+    border-color: transparent transparent #c4c4c4;
+    right: 20px;
+    top: -16px;
+  }
+  #noticeTip span.top {
+    border-width: 8px;
+    border-style: dashed dashed solid;
+    border-color: transparent transparent #fff;
+    right: 20px;
+    top: -14px;
+  }
+  #noticeTip a {
+    color: #00b38a;
+  }
+  #noticeTip strong {
+    font-weight: normal;
+    color: #00b38a;
+  }
+  #noticeTip .notice_tip {
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 8px;
+    color: #999;
+    text-decoration: none;
+  }
+  #noticeTip a.closeNT {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-left: 10px;
+    background: url(/../img/close_notice.png) no-repeat;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+  }
+  #noticeTip a.closeNT:hover {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+  }
+
+  // 页头消息提醒 popup, add by garylin
+  li.msg_dropdown {
+    position: relative;
+    &.open .lg_msg_popup {
+      left: -10px;
+      top: 39px;
+    }
+    // .lg_msg_popup {
+    //     display: none; // 这种方式，自定义滚动条没法出来。。。
+    // }
+  }
+  .lg_msg_popup {
+    position: absolute;
+    left: -3000px;
+    top: -1000px;
+    overflow-x: auto;
+    // height: 200px;
+    width: 320px;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    box-shadow: -1px 1px 1px #e7e7e7;
+    z-index: 100;
+    background: #fff;
+    .lg_msg_pu_body {
+      width: 100%;
+      max-height: 250px;
+      overflow: auto;
+      .no_body {
+        height: 60px;
+        padding-top: 20px;
+        p {
+          padding-left: 44px;
+          width: 130px;
+          margin: 0 auto;
+          line-height: 36px;
+        }
+      }
+    }
+    .lg_msg_pu_footer {
+      width: 100%;
+      background-color: #fafafa;
+      border-top: 1px solid #e7e7e7;
+      height: 40px;
+      line-height: 40px;
+      vertical-align: middle;
+    }
+
+    .lg_msg_setting, .lg_msg_more {
+      display: inline-block;
+      padding-top: 12px;
+      margin: 0;
+    }
+    a.lg_msg_setting {
+      float: left;
+      padding-left: 10px;
+      i {
+        width: 17px;
+        height: 16px;
+        display: inline-block;
+        line-height: 40px;
+      }
+    }
+    a.lg_msg_more {
+      float: right;
+      padding-right: 10px;
+      color: #00B38A;
+      text-decoration: underline;
+      &:hover {
+        color: #00B38A;
+      }
+    }
+
+    // 滚动条样式
+    .mCSB_container {
+      margin-right: 16px;
+    }
+    .mCS-dark-2>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+      width: 5px;
+      border-radius: 5px;
+    }
+    .mCS-dark-2>.mCSB_scrollTools .mCSB_draggerRail {
+      background: #fff;
+    }
+  }
+  .lg_msg_avatar {
+    background: #fff url(../img/msg_popup.png) no-repeat;
+    &.setting_i {
+      background-position: 0 0;
+    }
+    &.no_msg_i {
+      background-position: 0 -16px;
+    }
+  }
+  ul.lg_top_msg_list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      float: none;
+      height: auto;
+    }
+    li + li {
+      border-top: 1px dashed #e7e7e7;
+    }
+    .lg_msg_item {
+      padding: 8px 0;
+      &::after {
+        display: table;
+        content: '';
+        clear: both;
+      }
+      >em {
+        float: left;
+        display: none;
+        font-size: 24px;
+        line-height: 6px;
+        margin-top: -2px;
+        margin-left: -2px;
+        font-weight: 900;
+        color: #00b38a;
+        width: 24px;
+        text-align: center;
+      }
+      &.is_new>em {
+        display: block;
+      }
+      // 重置原来的样式，阿西
+      a.detail {
+        float: none;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        line-height: inherit;
+        &:hover {
+          text-decoration: underline;
+          color: #00b38a;
+        }
+      }
+      div {
+        display: block;
+        float: none;
+        line-height: 120%;
+        padding: 0 0 0 20px;
+        margin: 0;
+      }
+      .empha {
+        float: none;
+        color: #00b38a;
+        line-height: 1.5em;
+        padding: 0;
+        word-break: break-all;
+      }
+      .detail.empha {
+        color: #00b38a;
+      }
+    }
+  }
+  // 页头消息提示
+  .msg_group {
+    position: relative;
+    em.msg_amount {
+      display: inline-block;
+      padding: 0 3px;
+      background-color: #fd5f39;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 3px;
+      line-height: 15px;
+    }
+
+    em.msg_amount.hide {
+      display: none !important;
+    }
+  }
+
+  // overwrite scrollbar
+  .mCS-dark-2 > .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #00b38a;
+  }
+
+}
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio:2),
+only screen and (min--moz-device-pixel-ratio:2),
+only screen and (-o-min-device-pixel-ratio:2),
+only screen and (min-device-pixel-ratio:2),
+only screen and (min-resolution:192dpi),
+only screen and (min-resolution:2dppx) {
+
+  #lg_tbar div.lg_tbar_r a.lg_app:before {
+    background-size: 128/2px 256/2px;
+    background-position: -76/2px -82/2px;
+  }
+
+  #lg_tbar div.lg_tbar_r a.lg_app:hover {
+    &:before {
+      background-size: 128/2px 256/2px;
+      background-position: -20/2px -194/2px;
+    }
+  }
+  #lg_tbar #noticeTip a.closeNT {
+    background-image: url(../img/close_notice@2x.png);
+    background-size: 10px 10px;
+  }
+
+  #lg_tbar div.lg_tbar_r .passport {
+    &:before {
+      background-size: 128/2px 256/2px;
+      background-position: -20/2px -82/2px;
+    }
+  }
+  #lg_tbar div.lg_tbar_r .passport:hover {
+    &:before {
+      background-size: 128/2px 256/2px;
+      background-position: -20/2px -138/2px;
+    }
+  }
+}
