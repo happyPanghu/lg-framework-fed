@@ -1,6 +1,5 @@
 <template>
-    <div>
-        1111
+    <div v-html="htmlCode">
     </div>
 </template>
 
@@ -10,15 +9,11 @@
         name: "Hea",
         data() {
             return {
-                htmlCode: 3
+                htmlCode: htmlCode
             }
         }
     }
 </script>
-
-<!--<style scoped>-->
-<!--    /*@import '../../../src/header/less';*/-->
-<!--    .red{-->
-<!--        color: red;-->
-<!--    }-->
-<!--</style>-->
+<style lang="less">
+    @import "../../../src/header/less/index.less";
+</style>

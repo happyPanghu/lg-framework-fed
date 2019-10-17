@@ -66,4 +66,4 @@ const  htmlCode =`
   </div>
 `;
 
-export default htmlPart;
+export default htmlCode;
